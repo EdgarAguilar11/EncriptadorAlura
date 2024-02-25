@@ -1,0 +1,47 @@
+body{
+    background: #D3FDFC;
+    display: flex;
+}
+
+.logo{
+    width: 100px;
+    height: auto;
+}
+
+.seccionUno{
+    justify-content: center;
+    width: 80%;
+    height: 100%;
+}
+
+#inputTextoInicial{
+    display: block;
+    width: 80%;
+    height: 10em;
+    margin: 1em;
+}
+
+#mensajeInformacion{
+    display: block;
+}
+
+.botonesSeccionUno{
+    margin: 1em;
+    justify-content: space-around;
+}
+
+.botonesSeccionUno button{
+    width: 40%;
+    height: 4em;
+    border-radius: 15px;
+}
+
+.seccionDos{
+    justify-content: center;
+    width: 20%;
+    height: 100%;
+}
+
+.inputTextoResultado{
+    height: 10em;
+}
