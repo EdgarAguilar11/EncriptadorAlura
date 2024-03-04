@@ -14,19 +14,17 @@
             <img src="imagenes/letraLogo.png" class="logo">
         </div>
         <div class="seccionIngresarTexto">
-            <textarea id="inputTextoInicial" cols="70" rows="10" maxlength="400"></textarea>
+            <textarea id="inputTextoInicial" cols="70" rows="10" maxlength="400" onkeypress="soloMinusculasSinAcentos(this)"></textarea>
             <label id="mensajeInformacion"></label>
             <div class="botonesSeccionUno">
-                <button type="button">Encriptar</button>
-                <button type="button">Desencriptar</button>
+                <button type="button" onclick="encriptarTexto()">Encriptar</button>
+                <button type="button" onclick="desencriptarTexto()">Desencriptar</button>
             </div>
         </div>
     </section>
     <section class="seccionDos">
-        <div class="seccionTextoDeResultado">
-            <textarea id="inputTextoResultado" cols="70" rows="10" maxlength="400"></textarea>
-            <button type="button">Copiar Texto</button>
-        </div>
+        <textarea id="inputTextoResultado" cols="70" rows="10" maxlength="400" disabled></textarea>
+        <button type="button" onclick="copiarTexto()">Copiar Texto</button>
     </section>
 </body>
 </html>

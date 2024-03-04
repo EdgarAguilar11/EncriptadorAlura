@@ -1,6 +1,7 @@
 body{
     background: #D3FDFC;
     display: flex;
+    padding: 2%;
 }
 
 .logo{
@@ -8,40 +9,42 @@ body{
     height: auto;
 }
 
-.seccionUno{
-    justify-content: center;
+#inputTextoInicial, #mensajeInformacion{
+    display: block;
+    margin: 1rem auto;
     width: 80%;
-    height: 100%;
 }
 
-#inputTextoInicial{
-    display: block;
-    width: 80%;
-    height: 10em;
-    margin: 1em;
-}
-
-#mensajeInformacion{
-    display: block;
+#inputTextoInicial, #inputTextoResultado{
+    background: none;
+    border: none;
+    resize: none;
+    border-radius: 15px;
+    padding: 1rem;
 }
 
 .botonesSeccionUno{
-    margin: 1em;
-    justify-content: space-around;
+    display: flex;
+    margin: 1rem auto;
+    width: 80%;
+    justify-content: space-evenly;
 }
 
 .botonesSeccionUno button{
-    width: 40%;
-    height: 4em;
-    border-radius: 15px;
+    width: 25%;
+    height: 3rem;
+    border-radius: 10px;
 }
 
-.seccionDos{
-    justify-content: center;
-    width: 20%;
-    height: 100%;
+
+@media (min-width: 780px){
+    .seccionUno{
+        width: 80%;
+    }
 }
 
-.inputTextoResultado{
-    height: 10em;
+@media (max-width: 780px){
+    .seccionUno{
+        width: 100%;
+    }
 }
