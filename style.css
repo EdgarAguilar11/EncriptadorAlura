@@ -1,7 +1,18 @@
-body{
-    background: #D3FDFC;
+header{
     display: flex;
+    align-items: center;
+    font-size: 4rem;
+    color: #064f4e;
+    background: url(imagenes/fondo.jpg);
+}
+
+header img{
+    z-index: 2;
+}
+
+main{
     padding: 2%;
+    background: url(imagenes/fondo.jpg);
 }
 
 .logo{
@@ -9,10 +20,20 @@ body{
     height: auto;
 }
 
-#inputTextoInicial, #mensajeInformacion{
+#inputTextoInicial, #inputTextoResultado{
     display: block;
     margin: 1rem auto;
     width: 80%;
+}
+
+#divMensajeInformacion{
+    display: flex;
+    margin: 1rem auto;
+    width: 80%;
+}
+
+#divMensajeInformacion label{
+    margin: 0 0 0 1rem;
 }
 
 #inputTextoInicial, #inputTextoResultado{
@@ -23,28 +44,83 @@ body{
     padding: 1rem;
 }
 
-.botonesSeccionUno{
+.botonesSeccionUno, .botonesSeccionDos{
     display: flex;
     margin: 1rem auto;
     width: 80%;
     justify-content: space-evenly;
 }
 
-.botonesSeccionUno button{
-    width: 25%;
+.estiloBoton{
+    width: 30%;
     height: 3rem;
-    border-radius: 10px;
+    border-radius: 20px;
+    background: rgba(5,163,155,0.9584034297312675);
+    border: none;
 }
 
+.estiloBoton:hover{
+    border-color: #055853;
+    color: #055853;
+}
 
-@media (min-width: 780px){
+.estiloBoton:active{
+    background: #055853;
+    color: #FFFFFF;
+}
+
+.seccionDos{
+    text-align: center;
+    border-radius: 45px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 2rem #064f4e;
+    padding: 3rem;
+    margin: 0 auto;
+}
+
+#personaIcono{
+    width: 100%;
+    margin: 0 auto;
+}
+
+footer{
+    text-align: center;
+    justify-content: center;
+    background: url(imagenes/bg.jpg);
+    padding: 40px;
+    height: auto;
+    color: #FFFFFF;
+}
+
+@media (min-width: 980px){
+    main{
+        display: flex;
+    }
+
     .seccionUno{
         width: 80%;
     }
 }
 
-@media (max-width: 780px){
+@media (max-width: 980px){
+    main{
+        display: block;
+    }
+
+    header{
+        display: block;
+        text-align: center;
+        font-size: 3rem;
+        color: #064f4e;
+        background: url(imagenes/fondo.jpg);
+    }
+
     .seccionUno{
         width: 100%;
+        margin: 0 0 3rem 0;
+    }
+
+    .seccionDos{
+        width: 70%;
     }
 }

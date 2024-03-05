@@ -9,22 +9,38 @@
     <script src="funciones.js"></script>
 </head>
 <body>
-    <section class="seccionUno">
-        <div>
-            <img src="imagenes/letraLogo.png" class="logo">
-        </div>
-        <div class="seccionIngresarTexto">
-            <textarea id="inputTextoInicial" cols="70" rows="10" maxlength="400" onkeypress="soloMinusculasSinAcentos(this)"></textarea>
-            <label id="mensajeInformacion"></label>
-            <div class="botonesSeccionUno">
-                <button type="button" onclick="encriptarTexto()">Encriptar</button>
-                <button type="button" onclick="desencriptarTexto()">Desencriptar</button>
+    <header>
+        <img src="imagenes/letraLogo.png" class="logo">
+        <h2>Encriptador de Texto</h2>
+    </header>
+    <main>
+        <section class="seccionUno">
+            <div class="seccionIngresarTexto">
+                <textarea id="inputTextoInicial" cols="70" rows="10" maxlength="400" onkeypress="soloMinusculasSinAcentos(this)"></textarea>
+                <div id="divMensajeInformacion">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4m.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2"/>
+                    </svg>
+                    <label id="mensajeInformacion"></label>
+                </div>
+                <div class="botonesSeccionUno">
+                    <button type="button" onclick="encriptarTexto()" class="estiloBoton">Encriptar</button>
+                    <button type="button" onclick="desencriptarTexto()" class="estiloBoton">Desencriptar</button>
+                </div>
             </div>
-        </div>
-    </section>
-    <section class="seccionDos">
-        <textarea id="inputTextoResultado" cols="70" rows="10" maxlength="400" disabled></textarea>
-        <button type="button" onclick="copiarTexto()">Copiar Texto</button>
-    </section>
+        </section>
+        <section class="seccionDos">
+            <img src="imagenes/personaIcono.png" id="personaIcono">
+            <p id="mensajeResultado">Ningún mensaje fue encontrado</p>
+            <textarea id="inputTextoResultado" cols="70" rows="10" maxlength="400" disabled></textarea>
+            <div class="botonesSeccionDos">
+                <button type="button" onclick="copiarTexto()" class="estiloBoton" id="btnCopiar">Copiar Texto</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <img src="imagenes/letraLogo.png" class="logo">
+        <h2> &copy Copyright Edgar Jesus Aguilar Chavez - 2024 </h2>
+    </footer>
 </body>
 </html>

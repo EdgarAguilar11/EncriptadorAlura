@@ -1,6 +1,6 @@
-const mensajeInformacion = " ! Solo letras minúsculas y sin acentos.";
+const mensajeInformacion = "Solo letras minúsculas y sin acentos.";
 const mensajeErrorTextoAEncriptar = "Ningún mensaje fue encontrado.";
-const mensajeDeReferenciaInputResultado = "Ingresa el texto que deseas encriptar o desencriptar.";
+const mensajeDeReferenciaInputResultado = "Ingresa primero el texto que deseas encriptar o desencriptar.";
 const mensajeDeReferenciaInputInicial = "Ingresa el texto para Encriptar/Desencriptar aqui...";
 const expresionNumerosLetras = /[^a-z0-9\s*]/g;
 const remplazoA = "ai";
@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", function(){
     document.getElementById("mensajeInformacion").innerHTML = mensajeInformacion;
     document.getElementById("inputTextoInicial").setAttribute("placeHolder",`${mensajeDeReferenciaInputInicial}`);
     document.getElementById("inputTextoResultado").setAttribute("placeHolder",`${mensajeDeReferenciaInputResultado}`);
+    document.getElementById("inputTextoResultado").style.textAlign = "center";
+    document.getElementById("btnCopiar").style.display = "none";
 });
 
 function soloMinusculasSinAcentos(elemento){
@@ -25,7 +27,19 @@ function soloMinusculasSinAcentos(elemento){
 function encriptarTexto(){
     let textoParaEncriptar = document.getElementById("inputTextoInicial").value;
     let resultadoTextoEncriptado = textoParaEncriptar.replaceAll("e",remplazoE).replaceAll("i",remplazoI).replaceAll("a",remplazoA).replaceAll("o",remplazoO).replaceAll("u",remplazoU);
-    document.getElementById("inputTextoResultado").value = resultadoTextoEncriptado;
+    if(textoParaEncriptar.length > 0){
+        document.getElementById("mensajeResultado").style.display = "none";
+        document.getElementById("personaIcono").style.display = "none";
+        document.getElementById("btnCopiar").style.display = "block";
+        document.getElementById("inputTextoResultado").style.textAlign = "initial";
+        document.getElementById("inputTextoResultado").value = resultadoTextoEncriptado;
+    }else{
+        document.getElementById("mensajeResultado").style.display = "inline";
+        document.getElementById("personaIcono").style.display = "block";
+        document.getElementById("btnCopiar").style.display = "none";
+        document.getElementById("inputTextoResultado").style.textAlign = "center";
+        document.getElementById("inputTextoResultado").value = "";
+    }
 }
 
 function desencriptarTexto(){
